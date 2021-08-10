@@ -1,2 +1,2 @@
-# DS_ALGO
-geeks for geek must do questions solutions to help peers.  
+# DS_ALG
+DS algo important questions solutions to help peers.  
