@@ -1,0 +1,31 @@
+ //railway station such that no train waits.
+    int findPlatform(int arr[], int dep[], int n)
+    {
+    	// Your code here
+    	sort(arr,arr+n);
+    	sort(dep,dep+n);
+    	
+    	int i=1;
+    	int j=0;
+    	int max_plat=1; // to count max till now
+    	int need =1; // needed till now
+    	
+    	while(i<n) // to iterate over the array
+    	{
+    	    if(arr[i]>dep[j]) //if arrival is after departure
+    	    {
+    	        j++;
+    	        max_plat--;
+    	    }
+    	    else
+    	    {
+    	        i++;
+    	        max_plat++;
+    	    }
+    	    
+    	    need=max(max_plat,need);
+    	}
+    	
+    	return need;
+    }
+};
