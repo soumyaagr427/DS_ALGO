@@ -1,0 +1,37 @@
+class Solution{
+public:
+
+	bool checkTriplet(int arr[], int n)
+	{
+	    // first take he squars of individual elements
+	    for(int i=0;i<n;i++)
+	        arr[i]*=arr[i];
+	        
+	    // sorting the array
+	    sort(arr,arr+n);
+	    
+	    // two pointer method
+	    int high,low;
+	    
+	    for(int i=n-1;i>1;i--)
+	    {
+	        // initialise inside loop only
+	        low=0;
+	        high=n-2;
+	        while(low<high)
+	        {
+	        if(arr[low]+arr[high]==arr[i])
+	            return true;
+	        else
+	         {
+	             if(arr[low]+arr[high]>arr[i])
+	                high--;
+	            
+	             else
+	                low++;
+	         }
+	        }
+	    }
+	    return false;
+	}
+}
