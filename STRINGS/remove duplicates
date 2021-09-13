@@ -1,0 +1,24 @@
+		
+	string removeDups(string S) 
+	{
+	    char freq[26];
+        int j=0;
+    
+    for(int i=0;i<26;i++)
+        freq[i]=0;
+    
+    
+    for(int i=0;i<S.length();i++)
+    {
+        if(freq[S[i]-'a']<1)
+          {
+              freq[S[i]-'a']++;
+              S[j++]=S[i];
+          }
+    }
+    
+    S.erase(j);
+    
+    return S;
+	}
+};
